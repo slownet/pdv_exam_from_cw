@@ -60,25 +60,52 @@ unsigned int string_distance(const std::string &a, const std::string &b) {
 long distances(const std::vector<std::string> &vector, unsigned int &maxIdx) {
     long result = 0;
 
-    std::vector<unsigned int> local_max_idx(10);
-    std::vector<unsigned int> local_max_dist(10);
+    int computer_threads_count = 8;
 
-#pragma omp parallel for default(none) reduction(+: result) shared(local_max_idx, local_max_dist, vector)
-    for (int i = 0; i < vector.size(); ++i)
-        for (int j = i + 1; j < vector.size(); ++j) {
+    std::vector<unsigned int> local_max_idx(computer_threads_count);
+    std::vector<unsigned int> local_max_dist(computer_threads_count);
 
-            // Spocitame vzdalenost dvou slov od sebe
-            auto distance = string_distance(vector[i], vector[j]);
-            // Pokud je vzdalenost nejvetsi dosud nalezena, provedeme update indexu
-            // Dulezite: pokud je maximalni vzdalenost nabyvana na nekolika indexech,
-            // pamatujeme si vzdy jen ten nejmensi
-            if (distance > local_max_dist[omp_get_thread_num()]) {
-                local_max_idx[omp_get_thread_num()] = i * vector.size() + j;
-                local_max_dist[omp_get_thread_num()] = distance;
+
+#pragma omp parallel default(none) shared(result, local_max_idx, local_max_dist, vector)
+    {
+        unsigned int curr_max_distance = 0;
+        unsigned int curr_max_idx = 0;
+
+        auto chunk_size = 1 + vector.size() / omp_get_num_threads();
+
+        unsigned int local_result = 0;
+
+        auto thread_id = omp_get_thread_num();
+        auto start = thread_id * chunk_size;
+        auto end = std::min(chunk_size * (thread_id + 1), vector.size());
+
+
+        for (int i = start; i < end; ++i) {
+            for (int j = i + 1; j < vector.size(); ++j) {
+
+                // Spocitame vzdalenost dvou slov od sebe
+                auto distance = string_distance(vector[i], vector[j]);
+                // Pokud je vzdalenost nejvetsi dosud nalezena, provedeme update indexu
+                // Dulezite: pokud je maximalni vzdalenost nabyvana na nekolika indexech,
+                // pamatujeme si vzdy jen ten nejmensi
+                if (distance > curr_max_distance) {
+                    curr_max_distance = distance;
+                    curr_max_idx = i * vector.size() + j;
+                }
+
+                // Kumulujeme vzdalenosti
+                local_result += distance;
             }
-            // Kumulujeme vzdalenosti
-            result += distance;
         }
+
+        local_max_idx[omp_get_thread_num()] = curr_max_idx;
+        local_max_dist[omp_get_thread_num()] = curr_max_distance;
+
+#pragma omp critical
+        {
+            result += local_result;
+        }
+    }
     // Pry zvyseni rychlosti zapisujeme na odkaz jen jedno - na konci
 
     auto maxIndex = -1;
