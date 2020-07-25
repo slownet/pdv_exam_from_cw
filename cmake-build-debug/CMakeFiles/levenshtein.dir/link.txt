@@ -1,0 +1,1 @@
+/usr/bin/c++.exe  -O3 -fopenmp -march=native -pthread -g  -Wl,--enable-auto-import CMakeFiles/levenshtein.dir/main_levenshtein.cpp.o CMakeFiles/levenshtein.dir/levenshtein.cpp.o CMakeFiles/levenshtein.dir/strings.cpp.o  -o levenshtein.exe -Wl,--out-implib,liblevenshtein.dll.a -Wl,--major-image-version,0,--minor-image-version,0 

@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/cygdrive/c/Users/Maxim Bilan/Google Drive/school/pdv/cw_zkouska/assignment/levenshtein.cpp
+limits
+-
+climits
+-
+omp.h
+-
+iostream
+-
+levenshtein.h
+/cygdrive/c/Users/Maxim Bilan/Google Drive/school/pdv/cw_zkouska/assignment/levenshtein.h
+
+/cygdrive/c/Users/Maxim Bilan/Google Drive/school/pdv/cw_zkouska/assignment/levenshtein.h
+vector
+-
+string
+-
+

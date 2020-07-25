@@ -1,0 +1,17 @@
+"C:\Users\Maxim Bilan\Google Drive\school\pdv\cw_zkouska\assignment\cmake-build-debug\filter.exe"
+You can provide additional parameters when testing: [SEED] [SIZE]
+  [SEED] - seed used for generating numbers in the table
+  [SIZE] - dimension of the square table
+
+Checksum 19315692034737840 computed in 1042.72ms
+Checksum 13530439744918264 computed in 1164.86ms
+Checksum 13672990068885970 computed in 1238.62ms
+Checksum 13678277126039872 computed in 1239.9ms
+Checksum 13675076059867580 computed in 1244.28ms
+Checksum 13677663221265314 computed in 1244.43ms
+Checksum 13681702292857240 computed in 1239.97ms
+Checksum 13683504646893468 computed in 1244.35ms
+Checksum 13673974215883024 computed in 1239.47ms
+Checksum 13678634943341444 computed in 1238.72ms
+
+Process finished with exit code 0

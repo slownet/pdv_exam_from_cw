@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/cygdrive/c/Users/Maxim Bilan/Google Drive/school/pdv/cw_zkouska/assignment/data_table.h
+vector
+-
+iostream
+-
+
+/cygdrive/c/Users/Maxim Bilan/Google Drive/school/pdv/cw_zkouska/assignment/filter.cpp
+cmath
+-
+cstring
+-
+data_table.h
+/cygdrive/c/Users/Maxim Bilan/Google Drive/school/pdv/cw_zkouska/assignment/data_table.h
+omp.h
+-
+

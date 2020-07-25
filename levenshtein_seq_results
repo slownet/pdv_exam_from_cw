@@ -1,0 +1,22 @@
+"C:\Users\Maxim Bilan\Google Drive\school\pdv\cw_zkouska\assignment\cmake-build-debug\levenshtein.exe"
+You can provide additional parameters when testing: [SEED] [SIZE]
+  [SEED] - seed used for generating the set of strings
+  [SIZE] - number of strings generated
+
+Solution of 1. instance generated in 184.57ms
+   Distance:     1076170
+   Max distance idx:     805
+Solution of 2. instance generated in 317.074ms
+   Distance:     1076170
+   Max distance idx:     805
+Solution of 3. instance generated in 206.869ms
+   Distance:     1076170
+   Max distance idx:     805
+Solution of 4. instance generated in 169.095ms
+   Distance:     1076170
+   Max distance idx:     805
+Solution of 5. instance generated in 165.747ms
+   Distance:     1076170
+   Max distance idx:     805
+
+Process finished with exit code 0
