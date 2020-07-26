@@ -122,3 +122,27 @@ long distances(const std::vector<std::string> &vector, unsigned int &maxIdx) {
     maxIdx = maxIndex;
     return result;
 }
+
+long distances_original(const std::vector<std::string> &vector, unsigned int &maxIdx) {
+    long result = 0;
+    unsigned int distance = 0;
+    unsigned int maxDistance = 0;
+    unsigned int maxIndex = 0;
+    for (int i = 0; i < vector.size(); ++i)
+        for (int j = i + 1; j < vector.size(); ++j) {
+            // Spocitame vzdalenost dvou slov od sebe
+            distance = string_distance(vector[i], vector[j]);
+            // Pokud je vzdalenost nejvetsi dosud nalezena, provedeme update indexu
+            // Dulezite: pokud je maximalni vzdalenost nabyvana na nekolika indexech,
+            // pamatujeme si vzdy jen ten nejmensi
+            if (distance > maxDistance) {
+                maxIndex = i * vector.size() + j;
+                maxDistance = distance;
+            }
+            // Kumulujeme vzdalenosti
+            result += distance;
+        }
+    // Pry zvyseni rychlosti zapisujeme na odkaz jen jedno - na konci
+    maxIdx = maxIndex;
+    return result;
+}
