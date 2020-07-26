@@ -23,4 +23,15 @@ Vaším úkolem je paralelizovat aplikaci lokálního filtru ve čtvercové mati
 
 sekvenčně od prvku 0,0 po řádcích (pokud prvky v okolí přesahují index matice, použije se hodnota 0).
 
-Zparalelizujte metodu filtering v souboru filter.cpp, která tento výpočet provádí. Soubor filter.cpp odevzdávejte do BRUTE do úlohy 
+Zparalelizujte metodu filtering v souboru filter.cpp, která tento výpočet provádí. Soubor filter.cpp odevzdávejte do BRUTE do úlohy
+
+
+## Vysledky
+
+Prumerny cas behu v ms
+
+
+|              | Sekvencni  | Referencni  | Paralelizace                 |
+|--------------|------------|-------------|------------------------------|
+| levenshtein  |     162    |   63.3748   |  64.4912 (1.02x od referenci)|
+|  filter      |  1192.551  |   486.6795  |  262.073 (0.54x od referenci)|
