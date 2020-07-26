@@ -1,4 +1,0 @@
-/cygdrive/c/Users/Maxim Bilan/Google Drive/school/pdv/cw_zkouska/assignment/cmake-build-debug/CMakeFiles/edit_cache.dir
-/cygdrive/c/Users/Maxim Bilan/Google Drive/school/pdv/cw_zkouska/assignment/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/cygdrive/c/Users/Maxim Bilan/Google Drive/school/pdv/cw_zkouska/assignment/cmake-build-debug/CMakeFiles/levenshtein.dir
-/cygdrive/c/Users/Maxim Bilan/Google Drive/school/pdv/cw_zkouska/assignment/cmake-build-debug/CMakeFiles/filter.dir

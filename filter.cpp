@@ -48,7 +48,7 @@ void filtering(data_table &table, unsigned int iterations) {
 
             diagonal_length = std::min(diagonal_length + 1, longest_diagonal);
 
-#pragma omp parallel for default(none) shared(table, diagonal_length, i, j, S)
+#pragma omp parallel for default(none) shared(table, diagonal_length, i, j)
             for (int k = 0; k < diagonal_length; ++k) {
                 int curr_i = i - k;
                 int curr_j = j + k;
@@ -74,7 +74,7 @@ void filtering(data_table &table, unsigned int iterations) {
 
             diagonal_length = (cols - c) < rows ? cols - c : longest_diagonal;
 
-#pragma omp parallel for default(none) shared(table, diagonal_length, i, j, S)
+#pragma omp parallel for default(none) shared(table, diagonal_length, i, j)
             for (int k = 0; k < diagonal_length; ++k) {
                 int curr_i = i - k;
                 int curr_j = j + k;

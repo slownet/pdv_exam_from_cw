@@ -1,1 +1,0 @@
-/usr/bin/c++.exe  -O3 -fopenmp -march=native -pthread -g  -Wl,--enable-auto-import CMakeFiles/filter.dir/main_filter.cpp.o CMakeFiles/filter.dir/filter.cpp.o CMakeFiles/filter.dir/data_table.cpp.o  -o filter.exe -Wl,--out-implib,libfilter.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
